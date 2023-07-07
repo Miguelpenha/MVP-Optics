@@ -17,7 +17,7 @@ export const Title = styled.h1`
 `
 
 export const Form = styled.form`
-    width: 80%;
+    width: 85%;
     display: flex;
     max-width: 25em;
     margin-top: 8vh;
