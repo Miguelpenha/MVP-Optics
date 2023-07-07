@@ -12,7 +12,7 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
         <Container>
             <Points>{glasses.points > 0 ? `${glasses.points} ponto${glasses.points > 1 ? 's' : ''}` : 'Nenhum ponto'}</Points>
             <Title>{index+1}° opção - {glasses.name}</Title>
-            <Image placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=" fill src={glasses.image} alt={glasses.description}/>
+            <Image placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM0qwcAAPEAt704+nYAAAAASUVORK5CYII=" fill src={glasses.image} alt={glasses.description}/>
         </Container>
     )
 }
