@@ -31,6 +31,18 @@ export const Field = styled.div`
     flex-direction: column;
 `
 
+export const Label = styled.label`
+    font-size: 1.2em;
+`
+
+export const Options = styled.div`
+    gap: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.2em;
+    justify-content: center;
+`
+
 export const Input = styled.input`
     width: 100%;
     border: none;

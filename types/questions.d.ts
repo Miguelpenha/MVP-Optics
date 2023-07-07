@@ -1,8 +1,8 @@
 interface IQuestions {
-    shape: string
     idealPrice: string
-    veryScreenTime: string
-    verySunnyPlaces: string
+    veryScreenTime: boolean | undefined
+    verySunnyPlaces: boolean | undefined
+    shape: 'oval' | 'round' | 'square' | undefined
 }
 
 export default IQuestions

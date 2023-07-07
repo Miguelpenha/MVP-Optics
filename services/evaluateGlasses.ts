@@ -1,23 +1,25 @@
 import { IQuestions, IGlassesSelected } from '../types'
+import formatMoney from '../utils/formatMoney'
 import glasses from './glasses'
+import dinero from 'dinero.js'
 
 function evaluateGlasses(questions: IQuestions) {
     if (questions) {
-        const price = Number(questions.idealPrice.replace('R$', '').replace(',', '').replace('.', '').trim())
+        const { valueRaw: price } = formatMoney(questions.idealPrice)
         const glassesSelected: IGlassesSelected[] = []
 
         glasses.map(glasses => {
             let points = 0
 
-            if (glasses.priceRaw <= price) {
+            if (dinero({ amount: glasses.priceRaw, currency: 'BRL' }).lessThanOrEqual(dinero({ amount: price, currency: 'BRL' }))) {
                 points++
             }
 
-            if (questions.veryScreenTime === 'sim' && glasses.filterBlue) {
+            if (questions.veryScreenTime && glasses.filterBlue) {
                 points++
             }
 
-            if (questions.verySunnyPlaces === 'sim' && glasses.sunglasses) {
+            if (questions.verySunnyPlaces && glasses.sunglasses) {
                 points++
             }
 
