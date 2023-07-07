@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import useEvaluateGlasses from '../components/useEvaluateGlasses'
 import Head from 'next/head'
-import { Container, Title, Form, Field, Label, Options, Input, GlassesContainer, Glasses } from '../styles/pages'
+import { Container, Title, Form, Field, Label, Options, Input } from '../styles/pages'
 import Option from '../components/Option'
 import { IQuestions } from '../types'
+import GlassesList from '../components/GlassesList'
 
 function Home() {
     const [shape, setShape] = useState<IQuestions['shape']>()
@@ -79,13 +80,7 @@ function Home() {
                     </Options>
                 </Field>
             </Form>
-            {glasses && (
-                <GlassesContainer>
-                    {glasses.map((glasses, index) => (
-                        <Glasses key={index}>{index+1}° - {glasses.name} ({glasses.points})</Glasses>
-                    ))}
-                </GlassesContainer>
-            )}
+            <GlassesList glasses={glasses}/>
         </Container>
     </>
 }

@@ -10,7 +10,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com tecnologia de proteção UV',
         filterBlue: true,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1563146434-7d9ab85789d8'
     },
     {
         brand: 'Ray-Ban',
@@ -32,7 +32,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol de luxo com acabamentos sofisticados',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083'
     },
     {
         brand: 'Gucci',
@@ -43,7 +43,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol de grife com detalhes elegantes e proteção UV',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1475312775467-159e03aaa7cd'
     },
     {
         brand: 'Nike',
@@ -54,7 +54,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com lentes resistentes e tecnologia de proteção UV',
         filterBlue: true,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1540162875225-3f6b56d69fe8'
     },
     {
         brand: 'Fossil',
@@ -65,7 +65,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com estilo contemporâneo a um preço acessível',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1565015804286-24e771c069b0'
     },
     {
         brand: 'Carrera',
@@ -76,7 +76,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com design retrô e preço acessível',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1678550689244-9ab1e19acc0a'
     },
     {
         brand: 'Puma',
@@ -87,7 +87,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com estilo e bom custo-benefício',
         filterBlue: false,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1564867739458-f42235fab442'
     },
     {
         brand: 'Adidas',
@@ -98,7 +98,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol esportivo com preço acessível e alta qualidade',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1522125123931-9304d91a42ee'
     },
     {
         brand: 'Casio',
@@ -109,7 +109,7 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com design moderno e preço acessível',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1662230178026-008ddda27c04'
     }
 ]
 

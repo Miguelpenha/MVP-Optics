@@ -22,15 +22,15 @@ export const Container = styled.button<IContainer>`
     
     :hover {
         transform: scale(1);
+        background-color: #efefef;
         box-shadow: #efefef 0px 2px 8px 4px;
-        background-color: ${props => !props.selected ? '#efefef' : '#0e0e0e'};
 
         span {
-            color: ${props => props.selected ? '#efefef' : '#0e0e0e'};
+            color: #0e0e0e;
         }
 
         svg {
-            fill: ${props => props.selected ? '#efefef' : '#0e0e0e'};
+            fill: #0e0e0e;
         }
     }
 
