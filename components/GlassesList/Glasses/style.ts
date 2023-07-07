@@ -18,6 +18,10 @@ export const Container = styled.li`
         transform: scale(1);
         box-shadow: #efefef 0px 4px 16px 0px;
     }
+
+    @media screen and (max-width: 430px) {
+        width: 95%;
+    }
 `
 
 export const Points = styled.span`
@@ -32,6 +36,11 @@ export const Title = styled.span`
     margin-top: 0.5em;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    @media screen and (max-width: 900px) {
+        overflow: visible;
+        white-space: normal;
+    }
 `
 
 export const Image = styled(ImageRaw)`
@@ -39,6 +48,6 @@ export const Image = styled(ImageRaw)`
     object-fit: cover;
     border-radius: 10px;
     width: 100% !important;
-    height: 12em !important;
+    height: 24vh !important;
     position: relative !important;
 `
