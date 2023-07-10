@@ -1,6 +1,9 @@
 import { IGlassesSelected } from '../../../types'
 import { FC } from 'react'
+import processPoints from './processPoints'
+import processTitle from './processTitle'
 import { Container, Points, Title, Image } from './style'
+import blurData from '../../../utils/blurData'
 
 interface IProps {
     index: number
@@ -8,11 +11,20 @@ interface IProps {
 }
 
 const Glasses: FC<IProps> = ({ index, glasses }) => {
+    const points = processPoints(glasses)
+    const title = processTitle(index, glasses)
+
     return (
         <Container>
-            <Points>{glasses.points > 0 ? `${glasses.points} ponto${glasses.points > 1 ? 's' : ''}` : 'Nenhum ponto'}</Points>
-            <Title>{index+1}° opção - {glasses.name}</Title>
-            <Image placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mM0qwcAAPEAt704+nYAAAAASUVORK5CYII=" fill src={glasses.image} alt={glasses.description}/>
+            <Points>{points}</Points>
+            <Title>{title}</Title>
+            <Image
+                fill
+                placeholder="blur"
+                src={glasses.image}
+                blurDataURL={blurData}
+                alt={glasses.description}
+            />
         </Container>
     )
 }
