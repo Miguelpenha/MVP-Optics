@@ -1,6 +1,6 @@
 import { IGlassesSelected } from '../../types'
-import { FC } from 'react'
-import { Container } from './style'
+import { FC, useState } from 'react'
+import { Container, List, Input } from './style'
 import Glasses from './Glasses'
 
 interface IProps {
@@ -8,12 +8,19 @@ interface IProps {
 }
 
 const GlassesList: FC<IProps> = ({ glasses }) => {
+    const [search, setSearch] = useState('')
+
     if (glasses) {
         return (
             <Container>
-                {glasses.map((glasses, index) => (
-                    <Glasses key={index} index={index} glasses={glasses}/>
-                ))}
+                <Input value={search} placeholder="Pesquisar..." name="search" onChange={ev => setSearch(ev.target.value)}/>
+                <List>
+                    {glasses.map((glasses, index) => {
+                        if (glasses.name.toUpperCase().includes(search.toUpperCase())) {
+                            return <Glasses key={index} index={index} glasses={glasses}/>
+                        }
+                    })}
+                </List>
             </Container>
         )
     } else {
