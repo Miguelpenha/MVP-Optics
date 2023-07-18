@@ -1,11 +1,17 @@
-import { FC, ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, FC } from 'react'
 import { Container, Text } from './style'
 
-const Button: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ onClick, children, title, ...props }) => {
+interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    sizeIcon?: number
+    iconDirection?: 'left' | 'right'
+}
+
+const Button: FC<IProps> = ({ sizeIcon=2.1, onClick, iconDirection='left', children, title, ...props }) => {
     return (
-        <Container onClick={onClick} {...props}>
-            {children}
+        <Container sizeIcon={sizeIcon} onClick={onClick} {...props}>
+            {iconDirection === 'left' && children}
             <Text>{title}</Text>
+            {iconDirection === 'right' && children}
         </Container>
     )
 }

@@ -7,11 +7,9 @@ import FormQuestions from '../components/Form'
 import GlassesList from '../components/GlassesList'
 
 function Home() {
-    const [shape, setShape] = useState<IQuestions['shape']>()
-    const [veryScreenTime, setVeryScreenTime] = useState<boolean>()
-    const [idealPrice, setIdealPrice] = useState('')
-    const [verySunnyPlaces, setVerySunnyPlaces] = useState<boolean>()
-    const glasses = useEvaluateGlasses({ idealPrice, shape, veryScreenTime, verySunnyPlaces })
+    const [questions, setQuestions] = useState<IQuestions>()
+    const [showGlasses, setShowGlasses] = useState<boolean>(false)
+    const glasses = useEvaluateGlasses(showGlasses, questions)
 
     return <>
         <Head>
@@ -19,16 +17,10 @@ function Home() {
         </Head>
         <Container>
             <Title>Faça uma avaliação</Title>
-            <FormQuestions
-                shape={shape}
-                setShape={setShape}
-                setIdealPrice={setIdealPrice}
-                veryScreenTime={veryScreenTime}
-                verySunnyPlaces={verySunnyPlaces}
-                setVeryScreenTime={setVeryScreenTime}
-                setVerySunnyPlaces={setVerySunnyPlaces}
-            />
-            <GlassesList glasses={glasses}/>
+            <FormQuestions setQuestions={setQuestions} onFinish={() => setShowGlasses(true)}/>
+            {showGlasses && (
+                <GlassesList glasses={glasses}/>
+            )}
         </Container>
     </>
 }

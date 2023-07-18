@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.button`
+interface IContainer {
+    sizeIcon: number
+}
+
+export const Container = styled.button<IContainer>`
     width: 17rem;
     border: none;
     display: flex;
@@ -36,11 +40,11 @@ export const Container = styled.button`
     }
 
     svg {
-        width: 2.1em;
-        height: 2.1em;
         fill: #efefef;
         transition-duration: 0.2s;
         transition-timing-function: linear;
+        width: ${props => props.sizeIcon}em;
+        height: ${props => props.sizeIcon}em;
     }
 `
 

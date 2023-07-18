@@ -1,17 +1,26 @@
-import { FC } from 'react'
-import { IProps } from './types'
+import { IQuestions } from '../../types'
+import { Dispatch, SetStateAction, FC, useState, useEffect } from 'react'
 import { Form } from './style'
-import FieldShape from './fields/FieldShape'
-import FieldBoolean from './fields/FieldBoolean'
-import FieldIdealPrice from './fields/FieldIdealPrice'
+import useFields from './fields'
 
-const FormQuestions: FC<IProps> = ({ shape, setShape, veryScreenTime, setVeryScreenTime, setIdealPrice, verySunnyPlaces, setVerySunnyPlaces }) => {
+interface IProps {
+    onFinish: () => void
+    setQuestions: Dispatch<SetStateAction<IQuestions | undefined>>
+}
+
+const FormQuestions: FC<IProps> = ({ setQuestions, onFinish }) => {
+    const [indexQuestion, setIndexQuestion] = useState(0)
+    const fields = useFields(setQuestions, setIndexQuestion)
+
+    useEffect(() => {
+        if (indexQuestion === 4) {
+            onFinish()
+        }
+    }, [indexQuestion])
+    
     return (
         <Form onSubmit={ev => ev.preventDefault()}>
-            <FieldShape shape={shape} setShape={setShape}/>
-            <FieldBoolean value={veryScreenTime} setValue={setVeryScreenTime} label="Você passa muito tempo no celular ou computador?"/>
-            <FieldBoolean value={verySunnyPlaces} setValue={setVerySunnyPlaces} label="Você costuma sair para lugares ensolarados?"/>
-            <FieldIdealPrice setIdealPrice={setIdealPrice}/>        
+            {fields[indexQuestion]}
         </Form>
     )
 }

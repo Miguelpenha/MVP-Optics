@@ -2,14 +2,16 @@ import { IQuestions, IGlassesSelected } from '../types'
 import { useState, useEffect } from 'react'
 import evaluateGlasses from '../services/evaluateGlasses'
 
-function useEvaluateGlasses(questions: IQuestions) {
+function useEvaluateGlasses(finish: boolean, questions: IQuestions | undefined) {
     const [glasses, setGlasses] = useState<IGlassesSelected[]>()
 
     useEffect(() => {
-        const glassesSelected = evaluateGlasses(questions)
+        if (finish && questions) {
+            const glassesSelected = evaluateGlasses(questions)
 
-        setGlasses(glassesSelected)
-    }, [questions])
+            setGlasses(glassesSelected)
+        }
+    }, [questions, finish])
 
     return glasses
 }

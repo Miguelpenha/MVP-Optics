@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import ButtonRaw from '../Button'
 
 export const Form = styled.form`
     width: 85%;
@@ -25,6 +26,10 @@ export const Options = styled.div`
     flex-wrap: wrap;
     margin-top: 1.2em;
     justify-content: center;
+`
+
+export const Button = styled(ButtonRaw)`
+    margin-top: 4em;
 `
 
 export const Input = styled.input`
