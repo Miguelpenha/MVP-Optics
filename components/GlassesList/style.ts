@@ -30,7 +30,7 @@ export const Input = styled.input`
     }
 `
 
-export const List = styled.ul`
+export const List = styled.div`
     gap: 1.5em;
     width: 85%;
     display: flex;
@@ -40,5 +40,6 @@ export const List = styled.ul`
     margin-bottom: 4em;
     align-self: center;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
 `

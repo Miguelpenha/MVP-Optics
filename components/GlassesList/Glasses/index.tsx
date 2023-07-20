@@ -1,8 +1,8 @@
 import { IGlassesSelected } from '../../../types'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import processPoints from './processPoints'
 import processTitle from './processTitle'
-import { Container, Points, Title, Image } from './style'
+import { Container, Points, Title, Image, Details, Detail } from './style'
 import blurData from '../../../utils/blurData'
 
 interface IProps {
@@ -13,9 +13,10 @@ interface IProps {
 const Glasses: FC<IProps> = ({ index, glasses }) => {
     const points = processPoints(glasses)
     const title = processTitle(index, glasses)
+    const [showDetails, setShowDetails] = useState<boolean | undefined>(undefined)
 
     return (
-        <Container>
+        <Container onClick={() => setShowDetails(!showDetails)}>
             <Points>{points}</Points>
             <Title>{title}</Title>
             <Image
@@ -25,6 +26,16 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
                 blurDataURL={blurData}
                 alt={glasses.description}
             />
+            <Details show={showDetails}>
+                <Detail>Pontos: {glasses.points}</Detail>
+                <Detail>Preço: {glasses.price}</Detail>
+                <Detail>Tags: {glasses.tags.map((tag, index) => `${tag}${index==glasses.tags.length-1 ? '' : ', '}`)}</Detail>
+                <Detail>Nome: {glasses.name}</Detail>
+                <Detail>Marca: {glasses.brand}</Detail>
+                <Detail>Descrição: {glasses.description}</Detail>
+                <Detail>Filtro de luz Azul: {glasses.filterBlue ? 'Não tem' : 'Tem'}</Detail>
+                <Detail>Proteção contra luz solar: {glasses.sunglasses ? 'Não tem' : 'Tem'}</Detail>
+            </Details>
         </Container>
     )
 }
