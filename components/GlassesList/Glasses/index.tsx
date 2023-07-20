@@ -63,7 +63,7 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
                 <Detail>Descrição: {glasses.description}</Detail>
                 <Detail>Filtro de luz Azul: {glasses.filterBlue ? 'Tem' : 'Não tem'}</Detail>
                 <Detail>Proteção contra luz solar: {glasses.sunglasses ? 'Tem' : 'Não tem'}</Detail>
-                <ContainerQRCode>
+                <ContainerQRCode onClick={ev => ev.stopPropagation()}>
                     <Options>
                         <Option onClick={ev => {
                             ev.stopPropagation()
