@@ -98,7 +98,7 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
                         value={`https://mvp-optics.vercel.app/glasses/${glasses.id}`}
-                        imageSettings={{ src: '/img/logo.svg', excavate: false, height: 40, width: 40 }}
+                        imageSettings={{ src: '/img/Logo.svg', excavate: false, height: 40, width: 40 }}
                     />
                 </ContainerQRCode>
             </Details>
