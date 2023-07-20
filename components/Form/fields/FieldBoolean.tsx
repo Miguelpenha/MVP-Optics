@@ -40,18 +40,16 @@ const FieldBoolean: FC<IProps> = ({ name, label, setQuestions, setIndexQuestion 
                     </svg>
                 </Option>
             </Options>
-            {(value === true || value === false) && (
-                <Button onClick={() => {
-                    setIndexQuestion(indexQuestion => indexQuestion+1)
+            <Button disabled={value === undefined} onClick={() => {
+                setIndexQuestion(indexQuestion => indexQuestion+1)
 
-                    setValue(undefined)
-                }} title="Confirmar" iconDirection="right" sizeIcon={3}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                    </svg>
-                </Button>
-            )}
+                setValue(undefined)
+            }} title="Confirmar" iconDirection="right" sizeIcon={3}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </Button>
         </Field>
     )
 }

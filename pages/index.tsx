@@ -16,7 +16,7 @@ function Home() {
             <title>Ótica MVP</title>
         </Head>
         <Container>
-            <Title>Faça uma avaliação</Title>
+            <Title>{showGlasses ? 'As melhores opções baseada nas respostas' : 'Faça uma avaliação'}</Title>
             <FormQuestions setQuestions={setQuestions} onFinish={() => setShowGlasses(true)}/>
             {showGlasses && (
                 <GlassesList glasses={glasses}/>
