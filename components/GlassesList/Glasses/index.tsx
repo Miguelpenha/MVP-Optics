@@ -33,8 +33,8 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
                 <Detail>Nome: {glasses.name}</Detail>
                 <Detail>Marca: {glasses.brand}</Detail>
                 <Detail>Descrição: {glasses.description}</Detail>
-                <Detail>Filtro de luz Azul: {glasses.filterBlue ? 'Não tem' : 'Tem'}</Detail>
-                <Detail>Proteção contra luz solar: {glasses.sunglasses ? 'Não tem' : 'Tem'}</Detail>
+                <Detail>Filtro de luz Azul: {glasses.filterBlue ? 'Tem' : 'Não tem'}</Detail>
+                <Detail>Proteção contra luz solar: {glasses.sunglasses ? 'Tem' : 'Não tem'}</Detail>
             </Details>
         </Container>
     )
