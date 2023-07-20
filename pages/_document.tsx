@@ -41,8 +41,8 @@ export default class MyDocument extends Document {
                     <meta name="description" content="O MVP de uma ótica"/>
                     <meta name="twitter:card" content="summary_large_image"/>
                     <meta property="og:description" content="O MVP de uma ótica"/>
-                    <meta property="og:url" content="https://mvp-optics.vercel.app"/>
-                    <meta property="og:image" content="https://mvp-optics.vercel.app/img/thumbnail.png"/>
+                    <meta property="og:url" content={process.env.NEXT_PUBLIC_DOMAIN}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN}/img/thumbnail.png`}/>
                 </Head>
                 <body>
                     <Main/>

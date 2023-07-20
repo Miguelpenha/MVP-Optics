@@ -38,7 +38,7 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
             navigator.share({
                 title: glasses.name,
                 text: glasses.description,
-                url: `https://mvp-optics.vercel.app/glasses/${glasses.id}`
+                url: `${process.env.NEXT_PUBLIC_DOMAIN}/glasses/${glasses.id}`
             })
         }
     }
@@ -97,7 +97,7 @@ const Glasses: FC<IProps> = ({ index, glasses }) => {
                         bgColor="#0e0e0e"
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
-                        value={`https://mvp-optics.vercel.app/glasses/${glasses.id}`}
+                        value={`${process.env.NEXT_PUBLIC_DOMAIN}/glasses/${glasses.id}`}
                         imageSettings={{ src: '/img/Logo.svg', excavate: false, height: 40, width: 40 }}
                     />
                 </ContainerQRCode>
