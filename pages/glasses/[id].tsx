@@ -7,7 +7,7 @@ interface IQuery {
     id: string
 }
 
-function Glasses() {
+function GlassesPage() {
     const { id } = useRouter().query as unknown as IQuery
     const glasses = useGlasses(id)
 
@@ -15,12 +15,12 @@ function Glasses() {
         <Head>
             <title>Ótica MVP</title>
         </Head>
-        <Container>
-            {glasses && (
+        {glasses && (
+            <Container>
                 <Title>{glasses.name}</Title>
-            )}
-        </Container>
+            </Container>  
+        )}
     </>
 }
 
-export default Glasses
+export default GlassesPage
