@@ -7,7 +7,7 @@ interface IQuery {
     id: string
 }
 
-function GlassesPage() {
+function Glasses() {
     const { id } = useRouter().query as unknown as IQuery
     const glasses = useGlasses(id)
 
@@ -23,4 +23,4 @@ function GlassesPage() {
     </>
 }
 
-export default GlassesPage
+export default Glasses
