@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 interface IContainer {
     sizeIcon: number
@@ -9,7 +9,6 @@ export const Container = styled.button<IContainer>`
     border: none;
     display: flex;
     padding: 1rem;
-    cursor: pointer;
     text-align: center;
     align-self: center;
     border-radius: 10px;
@@ -20,19 +19,25 @@ export const Container = styled.button<IContainer>`
     transition-timing-function: linear;
     box-shadow: #efefef 0px 2px 8px 1px;
     
-    :hover {
-        transform: scale(1);
-        background-color: #efefef;
-        box-shadow: #efefef 0px 2px 8px 4px;
+    ${props => !props.disabled ? css`
+        cursor: pointer;
+        
+        :hover {
+            transform: scale(1);
+            background-color: #efefef;
+            box-shadow: #efefef 0px 2px 8px 4px;
 
-        span {
-            color: #0e0e0e;
-        }
+            span {
+                color: #0e0e0e;
+            }
 
-        svg {
-            fill: #0e0e0e;
+            svg {
+                fill: #0e0e0e;
+            }
         }
-    }
+    ` : css`
+        filter: brightness(0.5);
+    `}
 
     @media screen and (max-width: 900px) {
         max-width: 80%;
