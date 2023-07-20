@@ -10,7 +10,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com tecnologia de proteção UV',
         filterBlue: true,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1563146434-7d9ab85789d8'
+        image: 'https://images.unsplash.com/photo-1563146434-7d9ab85789d8',
+        id: 'e0e638b4-faac-4293-8f73-ff92e4870e2b'
     },
     {
         brand: 'Ray-Ban',
@@ -21,7 +22,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com design moderno e proteção UV',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f'
+        image: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f',
+        id: '1c76b735-332c-4be5-bf88-8498d313c499'
     },
     {
         brand: 'Prada',
@@ -32,7 +34,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol de luxo com acabamentos sofisticados',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083'
+        image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083',
+        id: 'b67fecfe-7e80-4b26-8dd1-befe4fa7be48'
     },
     {
         brand: 'Gucci',
@@ -43,7 +46,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol de grife com detalhes elegantes e proteção UV',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1475312775467-159e03aaa7cd'
+        image: 'https://images.unsplash.com/photo-1475312775467-159e03aaa7cd',
+        id: '5043510f-f0a1-454b-8b86-af50efe4b25a'
     },
     {
         brand: 'Nike',
@@ -54,7 +58,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com lentes resistentes e tecnologia de proteção UV',
         filterBlue: true,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1540162875225-3f6b56d69fe8'
+        image: 'https://images.unsplash.com/photo-1540162875225-3f6b56d69fe8',
+        id: 'aaa2a35b-6302-4c95-8241-45a4b520d041'
     },
     {
         brand: 'Fossil',
@@ -65,7 +70,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com estilo contemporâneo a um preço acessível',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1565015804286-24e771c069b0'
+        image: 'https://images.unsplash.com/photo-1565015804286-24e771c069b0',
+        id: 'ec615b3b-c244-4514-9b3d-69cdcd8cd351'
     },
     {
         brand: 'Carrera',
@@ -76,7 +82,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com design retrô e preço acessível',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1678550689244-9ab1e19acc0a'
+        image: 'https://images.unsplash.com/photo-1678550689244-9ab1e19acc0a',
+        id: '2234cc68-1c95-45a6-8c74-dedc8f93264d'
     },
     {
         brand: 'Puma',
@@ -87,7 +94,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Grau esportivo com estilo e bom custo-benefício',
         filterBlue: false,
         sunglasses: false,
-        image: 'https://images.unsplash.com/photo-1564867739458-f42235fab442'
+        image: 'https://images.unsplash.com/photo-1564867739458-f42235fab442',
+        id: 'b5f62a91-95e0-4e28-a57f-368d1be2d7c9'
     },
     {
         brand: 'Adidas',
@@ -98,7 +106,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol esportivo com preço acessível e alta qualidade',
         filterBlue: true,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1522125123931-9304d91a42ee'
+        image: 'https://images.unsplash.com/photo-1522125123931-9304d91a42ee',
+        id: '75f912ae-cb49-4213-b1ef-7e752234d3bd'
     },
     {
         brand: 'Casio',
@@ -109,7 +118,8 @@ const glasses: IGlasses[] = [
         description: 'Óculos de Sol com design moderno e preço acessível',
         filterBlue: false,
         sunglasses: true,
-        image: 'https://images.unsplash.com/photo-1662230178026-008ddda27c04'
+        image: 'https://images.unsplash.com/photo-1662230178026-008ddda27c04',
+        id: '6c1ffa2f-3b41-4613-b754-91cfa4f4219b'
     }
 ]
 

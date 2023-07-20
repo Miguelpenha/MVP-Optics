@@ -1,5 +1,6 @@
 import styled, { keyframes, css } from 'styled-components'
 import ImageRaw from 'next/image'
+import { QRCodeSVG } from 'qrcode.react'
 
 export const Container = styled.button`
     width: 25em;
@@ -48,7 +49,7 @@ export const Title = styled.span`
     }
 `
 
-export const Image = styled(ImageRaw)`
+export const ImageGlasses = styled(ImageRaw)`
     margin-top: 1em;
     object-fit: cover;
     border-radius: 10px;
@@ -69,7 +70,7 @@ const animationShowDetails = keyframes`
 
 const animationHiddenDetails = keyframes`
     from {
-        max-height: 20em;
+        max-height: 60em;
     }
 
     to {
@@ -93,11 +94,74 @@ export const Details = styled.div<IDetails>`
         max-height: 0em;
         animation: ${animationHiddenDetails} 0.4s linear;
     ` : props.show && css`
-        max-height: 20em;
+        max-height: 60em;
         animation: ${animationShowDetails} 0.4s linear;
     `}
 `
 
 export const Detail = styled.p`
     margin-bottom: 0.4em;
+`
+
+export const ContainerQRCode = styled.div`
+    width: 70%;
+    display: flex;
+    cursor: default;
+    margin: 3em auto;
+    overflow: hidden;
+    position: relative;
+    align-self: center;
+    border-radius: 15px;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    :hover {
+        background-color: rgba(0, 0, 0, 0.6);
+
+        div {
+            visibility: visible;
+        }
+    }
+
+    div {
+        visibility: hidden;
+    }
+`
+
+export const Options = styled.div`
+    gap: 1.5em;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    position: absolute;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+`
+
+export const Option = styled.button`
+    border: none;
+    width: 3.5em;
+    display: flex;
+    padding: 0.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    background-color: #0e0e0e;
+    transition-timing-function: linear;
+
+    :hover {
+        background-color: rgba(14, 14, 14, 0.8);
+    }
+
+    svg {
+        width: 100%;
+        fill: #efefef;
+    }
+`
+
+export const QRCode = styled(QRCodeSVG)`
+    width: 100%;
+    z-index: -1;
+    height: auto;
+    border-radius: 15px;
 `
