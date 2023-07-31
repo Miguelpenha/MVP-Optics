@@ -17,7 +17,8 @@ export const Field = styled.div`
 `
 
 export const Label = styled.label`
-    font-size: 1.2em;
+    font-size: 1.4em;
+    font-weight: bold;
 `
 
 export const Options = styled.div`
