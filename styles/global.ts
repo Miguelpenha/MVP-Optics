@@ -8,7 +8,7 @@ export default createGlobalStyle`
         box-sizing: border-box;
         scroll-behavior: smooth;
         scrollbar-color: #efefef #0e0e0e;
-        font-family: 'Inconsolata', monospace;
+        font-family: 'Roboto', sans-serif;
         
         ::-webkit-scrollbar {
             width: 12px;
