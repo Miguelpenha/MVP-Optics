@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router'
 import useGlasses from '../../services/useGlasses'
 import Head from 'next/head'
-import { Container, Title } from '../../styles/pages/glasses'
+import { Container, Title, Image } from '../../styles/pages/glasses'
+import ButtonBack from '../../components/ButtonBack'
+import blurData from '../../utils/blurData'
 
 interface IQuery {
     id: string
@@ -17,8 +19,16 @@ function Glasses() {
         </Head>
         {glasses && (
             <Container>
+                <ButtonBack back="/"/>
                 <Title>{glasses.name}</Title>
-            </Container>  
+                <Image
+                    fill
+                    placeholder="blur"
+                    src={glasses.image}
+                    blurDataURL={blurData}
+                    alt={glasses.description}
+                />
+            </Container>
         )}
     </>
 }
