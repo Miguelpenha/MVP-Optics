@@ -7,7 +7,7 @@ export const Container = styled.main`
 `
 
 export const Title = styled.h1`
-    margin-top: 6vh;
+    margin-top: 2vh;
     font-size: 2.2em;
     align-self: center;
     text-align: center;
