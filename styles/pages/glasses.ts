@@ -17,15 +17,32 @@ export const Title = styled.h1`
     }
 `
 
-export const Image = styled(ImageRaw)`
-    margin-top: 4em;
-    object-fit: cover;
+export const ContainerImage = styled.div`
+    width: 30em;
+    height: 35vh;
+    margin-top: 3em;
+    overflow: hidden;
     align-self: center;
     border-radius: 10px;
-    width: 30em !important;
-    position: relative !important;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    :hover {
+        filter: brightness(0.5);
+
+        img {
+            transform: scale(1.2);
+        }
+    }
 
     @media screen and (max-width: 520px) {
         width: 90% !important;
     }
+`
+
+export const Image = styled(ImageRaw)`
+    object-fit: cover;
+    transition-duration: 0.2s;
+    position: relative !important;
+    transition-timing-function: linear;
 `

@@ -1,7 +1,7 @@
 import { IGlasses } from '../../types'
 import { FC } from 'react'
 import Head from 'next/head'
-import { Container, Title, Image } from '../../styles/pages/glasses'
+import { Container, Title, ContainerImage, Image } from '../../styles/pages/glasses'
 import ButtonBack from '../../components/ButtonBack'
 import blurData from '../../utils/blurData'
 import { GetServerSideProps } from 'next'
@@ -25,13 +25,15 @@ const Glasses: FC<IProps> = ({ glasses }) => {
         <Container>
             <ButtonBack back="/"/>
             <Title>{glasses.name}</Title>
-            <Image
-                fill
-                placeholder="blur"
-                src={glasses.image}
-                blurDataURL={blurData}
-                alt={glasses.description}
-            />
+            <ContainerImage>
+                <Image
+                    fill
+                    placeholder="blur"
+                    src={glasses.image}
+                    blurDataURL={blurData}
+                    alt={glasses.description}
+                />
+            </ContainerImage>
         </Container>
     </>
 }
