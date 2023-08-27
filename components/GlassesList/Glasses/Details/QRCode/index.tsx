@@ -1,5 +1,6 @@
 import { IGlassesSelected } from '../../../../../types'
 import { FC } from 'react'
+import useHandleCopy from './useHandleCopy'
 import useHandleShare from './useHandleShare'
 import { Container, Options, Option, QRCodeRaw } from './style'
 import handleDownload from './handleDownload'
@@ -9,11 +10,19 @@ interface IProps {
 }
 
 const QRCode: FC<IProps> = ({ glasses }) => {
+    const link = `${process.env.NEXT_PUBLIC_DOMAIN}/glasses/${glasses.id}`
+    const handleCopy = useHandleCopy(link)
     const handleShare = useHandleShare(glasses)
 
     return (
         <Container onClick={ev => ev.stopPropagation()}>
             <Options>
+                <Option onClick={handleCopy}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                    </svg>
+                </Option>
                 <Option onClick={handleShare}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0z" fill="none"/>
@@ -34,11 +43,11 @@ const QRCode: FC<IProps> = ({ glasses }) => {
             <QRCodeRaw
                 level="M"
                 id="qrcode"
+                value={link}
                 fgColor="#efefef"
                 bgColor="#0e0e0e"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
-                value={`${process.env.NEXT_PUBLIC_DOMAIN}/glasses/${glasses.id}`}
                 imageSettings={{ src: '/img/Logo.svg', excavate: false, height: 40, width: 40 }}
             />
         </Container>
